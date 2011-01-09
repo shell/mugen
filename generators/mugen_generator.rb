@@ -27,6 +27,7 @@ class MugenGenerator < Rails::Generator::Base
        m.directory 'app/views/mygengo/comments'
        m.directory 'app/views/mygengo/jobs'   
        m.directory 'public/stylesheets/mygengo'   
+       m.directory 'public/images/mygengo'   
        m.file 'app/views/mygengo/account/index.haml', 'app/views/mygengo/account/index.haml'
        m.file 'app/views/mygengo/account/_balance.haml', 'app/views/mygengo/account/_balance.haml'
        m.file 'app/views/mygengo/account/_stats.haml', 'app/views/mygengo/account/_stats.haml'
