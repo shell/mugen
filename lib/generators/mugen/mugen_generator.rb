@@ -8,6 +8,7 @@ class MugenGenerator < Rails::Generators::Base
       app/views/mygengo/account
       app/views/mygengo/comments
       app/views/mygengo/jobs
+      public/stylesheets/mygengo
     ).each {|dir|
       directory dir 
     }
@@ -35,6 +36,11 @@ class MugenGenerator < Rails::Generators::Base
       app/views/mygengo/jobs/revise_form.haml
       app/views/mygengo/jobs/revision.haml
       app/views/mygengo/jobs/show.haml      
+      public/stylesheets/mygengo/base.css      
+      public/stylesheets/mygengo/mugen.css      
+      public/stylesheets/mygengo/override.css      
+      public/stylesheets/mygengo/scaffold.css      
+      public/stylesheets/mygengo/style.css      
     ).each do |filename|
       copy_file filename, filename
     end 
