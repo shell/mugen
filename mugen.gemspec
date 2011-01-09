@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   
   s.add_runtime_dependency 'activesupport'
   s.add_runtime_dependency 'httparty'
+  s.add_runtime_dependency 'haml'
   s.add_runtime_dependency 'ruby-hmac'
   
   # s.add_development_dependency "another", "= 0.9"
