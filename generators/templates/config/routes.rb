@@ -1,0 +1,1 @@
+../../../lib/generators/mugen/templates/config/routes2.rb

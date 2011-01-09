@@ -1,0 +1,7 @@
+%h3 Revise
+= form_for :job, :url => {:action => 'revise', :id => @job['job_id']} do |f|
+  .field
+    Comment
+    %br
+    = text_area_tag 'job[comment]', '', :size => '40x7'
+  = f.submit 'Revise'

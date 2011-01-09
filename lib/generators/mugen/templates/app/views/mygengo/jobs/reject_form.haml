@@ -1,0 +1,36 @@
+%h3 Rejection form
+= form_for :job, :url => {:action => 'reject', :id => @job['job_id']} do |f|    
+  .field
+    Job ##{link_to @job['job_id'], mygengo_job_path(@job['job_id'])}
+  .field
+    Whould you like to cancel the translation?
+    %br                   
+    = radio_button_tag 'job[follow_up]', 'cancel' 
+    Yes, please cancel and refund me
+    %br
+    = radio_button_tag 'job[follow_up]', 'requeue'
+    No, please have another translator finish the job
+  .field
+    Rejection reason
+    %br                   
+    = radio_button_tag 'job[reason]', 'quality'
+    Poor quality of translation
+    %br
+    = radio_button_tag 'job[reason]', 'missing'
+    Missing of incomplete translation
+    %br
+    = radio_button_tag 'job[reason]', 'missing'
+    Other (please describe beliw)
+  .field
+    Comment
+    %br
+    = text_area_tag 'job[comment]', '', :size => '40x2'
+  - if (@job['captcha_url'] && !@job['captcha_url'].empty?)
+    .field
+      = image_tag @job['captcha_url']
+      %br
+      = text_field_tag 'job[captcha]'
+        
+  = f.submit "Reject translation"
+  |
+  = link_to :back

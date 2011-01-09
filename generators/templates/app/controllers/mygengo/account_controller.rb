@@ -1,0 +1,1 @@
+../../../../../lib/generators/mugen/templates/app/controllers/mygengo/account_controller.rb

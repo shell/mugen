@@ -1,0 +1,53 @@
+%h3 New translation order
+= form_for :job, :url => {:action => 'create'}, :html => {:class => 'mygengo-form'}  do |f|
+  .field
+    Slug
+    %br
+    = f.text_field :slug
+  .float
+    .field
+      Text
+      %br
+      = f.text_area :body_src
+  %div
+    .field.float
+      Translate from
+      %br
+      = f.select :lc_src, @language_src, :selected => 'en'
+    .field
+      Translate to
+      %br
+      = f.select :lc_tgt, @language_tgt
+    .field
+      Tier
+      %br
+      = f.radio_button :tier, :machine
+      Machine
+      = f.radio_button:tier, :standart
+      Standart
+      = f.radio_button :tier, :pro
+      Pro
+      = f.radio_button :tier, :ultra
+      Ultra                             
+    #comment_area.hidden
+      Comment
+      %br
+      = f.text_area :comment, :size => '40x7'
+    #comment_button.field
+      = button_to_function 'Add comment' do |page|
+        - page['#comment_area'].show
+        - page['#comment_button'].hide
+        
+    .field
+      = f.check_box :as_group
+      As group
+    .field
+      = f.check_box :auto_approve    
+      Auto approve and publish jobs
+    / .field
+    /   %h4 Total (250 words)
+    /   $10.50  
+    .field
+      = f.submit "Order"    
+    
+.clear    

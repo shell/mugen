@@ -1,0 +1,117 @@
+.mygengo-box {
+	border: 1px dashed #000;
+	margin: 5px;
+	padding: 5px 0px 5px 15px;
+	width: 400px;
+}         
+
+.hidden {
+	display: none;
+}              
+
+.clear {
+	clear: all;
+}
+
+.mygengo-form {
+	
+}
+
+.mygengo-form div{
+} 
+
+.mygengo-form div.float{
+	float: left;	
+	margin-right: 15px;
+}	
+.mygengo-form div.left{
+	float: left;	
+	margin-right: 15px;
+}	
+
+
+.mygento-comments {
+	
+}
+
+.mygengo-revisions {
+	
+}
+
+table td {
+	padding: 6px 6px;
+	border-bottom: 1px solid #cccccc;
+	font-size: 1em;
+	line-height: 1.4em;
+	vertical-align: top; 
+}
+
+.general {
+  margin: 1.4em 0; }
+  .general h2 {
+    font-size: 1.1em;
+    margin: 0; }
+
+table.general {
+  width: 100%;
+  margin: 0.5em auto 1em auto;
+  border-top: 1px solid #cccccc;
+  background: white; }
+  table.general thead th {
+    font-weight: normal;
+    font-size: 0.95em;
+    line-height: 1em;
+    padding: 4px 6px;
+    border-bottom: 1px solid #cccccc;
+    background-color: #dddddd;
+    page-break-before: auto;
+    white-space: nowrap;
+    text-align: left; }
+    table.general thead th.right_align {
+      text-align: right; }
+    table.general thead th a {
+      color: #006699;
+      text-decoration: none;
+      border: 0; }
+  table.general thead.tabular th {
+    font-weight: normal;
+    font-size: 9px;
+    text-transform: uppercase;
+    line-height: 1em;
+    padding: 5px 6px;
+    background-color: #dddddd; }
+    table.general thead.tabular th.flag_label {
+      padding: 5px 2px; }
+  table.general tr.highlight {
+    background-color: #ecf7ff;
+    cursor: pointer; }
+  table.general tr.normal {
+    background: transparent; }
+  table.general td {
+    padding: 6px 6px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 1em;
+    line-height: 1.4em;
+    vertical-align: top; }
+    table.general td.grouping_header {
+      font-weight: bold;
+      font-size: 0.9em;
+      line-height: 1.1em;
+      padding: 4px 6px;
+      border-bottom: 1px solid #cccccc;
+      color: #999999;
+      background-color: #f6f6f6; }
+    table.general td.header {
+      padding: 0.4em 0.5em;
+      vertical-align: bottom;
+      border-bottom: 1px solid #cccccc;
+      background-color: #eeeeee; }
+    table.general td.right_align {
+      text-align: right;
+      white-space: nowrap; }
+    table.general td.upper {
+      text-transform: uppercase; }
+  table.general tbody td.grouping_header {
+    padding: 6px; }
+  table.general tfoot td {
+    border: 0; }

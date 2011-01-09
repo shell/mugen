@@ -1,0 +1,54 @@
+%h3 Job review page
+= form_for :job, :url => {:action => 'approve', :id => @job['job_id']} do |f|
+  .field
+    Job ##{link_to @job['job_id'], mygengo_job_path(@job['job_id'])}    
+  .field
+    %h4 
+      Original text
+      %br
+      = text_area_tag :body_src, @job['body_src'], :size => '40x7'
+  .field
+    %h4
+      Preview      
+      %br
+      = image_tag @preview, :title => "translation preview"
+    
+  .field
+    Please rate the translation
+    %br               
+    Bad
+    = radio_button_tag 'job[rating]', 1
+    1
+    = radio_button_tag 'job[rating]', 2
+    2
+    = radio_button_tag 'job[rating]', 3
+    3
+    = radio_button_tag 'job[rating]', 4
+    4
+    = radio_button_tag 'job[rating]', 5
+    5
+    Good    
+  .field
+    for_translator
+    %br
+    = text_area_tag 'job[for_translator]', '', :size => '40x2'
+  .field
+    for_mygengo
+    %br
+    = text_area_tag 'job[for_mygengo]', '', :size => '40x2'
+    
+  .field
+    Can myGengo use this translation publicly in its examples?
+    %br
+    = check_box_tag 'job[public]', '1'
+    Yes, you can use this translation as public example of myGengo service.
+  
+  .mygengo-box
+    = render :partial => "comments", :locals => {:comments => @comments} 
+    
+    
+  = f.submit "Approve"     
+  |  
+  = link_to 'Reject', reject_form_mygengo_job_path(@job['job_id'])
+  | 
+  = link_to 'Request corrections', revise_form_mygengo_job_path(@job['job_id'])

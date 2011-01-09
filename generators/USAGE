@@ -1,0 +1,34 @@
+Description:
+    Generates MyGengo scaffold for your app
+
+Example:
+    script/generate mugen 
+
+    This will update routes.rb    
+    This will create:
+      config/initializers/mugen.rb
+      app/controllers/mygengo
+      app/controllers/mygengo/account_controller.rb
+      app/controllers/mygengo/comments_controller.rb
+      app/controllers/mygengo/jobs_controller.rb
+      app/helpers/mugen_helper.rb
+      app/views/layouts/mygengo.html.erb
+      app/views/mygengo/account
+      app/views/mygengo/comments
+      app/views/mygengo/jobs
+      app/views/mygengo/account/index.haml
+      app/views/mygengo/account/_balance.haml
+      app/views/mygengo/account/_stats.haml
+      app/views/mygengo/comments/_comment.haml
+      app/views/mygengo/comments/_form.haml
+      app/views/mygengo/jobs/_comments.haml
+      app/views/mygengo/jobs/_feedback.haml
+      app/views/mygengo/jobs/_revision.haml
+      app/views/mygengo/jobs/index.haml
+      app/views/mygengo/jobs/new.haml
+      app/views/mygengo/jobs/reject_form.haml
+      app/views/mygengo/jobs/review_form.haml
+      app/views/mygengo/jobs/revise_form.haml
+      app/views/mygengo/jobs/revision.haml
+      app/views/mygengo/jobs/show.haml
+      README     

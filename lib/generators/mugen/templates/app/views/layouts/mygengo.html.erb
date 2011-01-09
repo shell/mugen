@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyGengo</title>
+  <%= stylesheet_link_tag "mygengo/base", "mygengo/style", "mygengo/override", :cache => true %>
+  <%= stylesheet_link_tag 'mygengo/scaffold', 'mygengo/mugen', :cache => true %>
+  <%= javascript_include_tag 'jquery', 'rails', 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="/">Gengo</a></h1>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf">
+          <li><%= link_to 'Jobs', '/mygengo/jobs' %></li>
+          <li><%= link_to 'Account', '/mygengo/account' %></li>
+        </ul>
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">  
+        <% flash.each do |type, message| -%>
+          <% unless message.empty? %>
+            <div class="message <%= type %>">
+              <p><%= message %></p>
+            </div>
+          <% end %>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <br />
+        <br />
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> Vladimir Penkin</p>
+          </div>      
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>    
+  </div>
+</body>
+</html>

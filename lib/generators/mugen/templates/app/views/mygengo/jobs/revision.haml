@@ -1,0 +1,8 @@
+%h2 Job: #{@job['job_id']}
+
+%p 
+  Source:
+  %br
+  = @revision['body_tgt']
+
+= link_to 'Back', mygengo_job_path(@job['job_id'])

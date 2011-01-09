@@ -1,0 +1,1 @@
+../../../../lib/generators/mugen/templates/config/initializers/mugen.rb

@@ -1,0 +1,8 @@
+%h3 Jobs listing
+
+%table.general
+  -  for job in @jobs
+    = render :partial => 'mygengo/jobs/job', :locals => {:job => job}
+
+%br
+= link_to 'Create a job', new_mygengo_job_path

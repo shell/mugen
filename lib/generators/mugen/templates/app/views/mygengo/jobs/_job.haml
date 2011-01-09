@@ -1,0 +1,36 @@
+%tr   
+  %td
+    Job #
+    = link_to job["job_id"], mygengo_job_path(job["job_id"])
+    %br
+    = job['slug']
+  %td
+    = job['status']
+    %br
+    = job['tier']
+  %td
+    = job['comments'].size
+    comments
+    %br
+    = job['lc_src']
+    &raquo;
+    =job['lc_tgt']
+  %td
+    = job['credits']
+    credits
+    %br
+    = job['unit_count']
+    words
+  %td
+    = d job['ctime']
+    %br
+    - unless job['eta'].empty?
+      = eta(job['eta'])
+  %td
+    Actions
+    %br    
+    = link_to 'Cancel', mygengo_job_path(job['job_id']), :method => :delete, :confirm => 'Are you sure?'
+    - if job['status'] == 'reviewable'
+      = link_to 'Review', review_form_mygengo_job_path(job["job_id"])    
+    = link_to 'View', mygengo_job_path(job["job_id"])    
+  

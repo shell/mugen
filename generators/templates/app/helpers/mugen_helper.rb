@@ -1,0 +1,1 @@
+../../../../lib/generators/mugen/templates/app/helpers/mugen_helper.rb

@@ -1,0 +1,10 @@
+%h3 Leave a comment
+= form_for :comment, :url => {:controller => 'mygengo/comments', :action => 'create', :id => @job['job_id']}  do |f|
+  .field
+    Text
+    %br
+    = f.text_area :body, :size => '40x7'
+  .field
+    Requesting personal contact details from translators is prohibited
+  = f.submit "Submit Comment"
+%br  

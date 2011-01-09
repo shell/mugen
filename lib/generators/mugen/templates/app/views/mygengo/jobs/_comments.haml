@@ -1,0 +1,8 @@
+- if comments.size > 0 
+  %h4 Comments
+  %table.mygento-comments
+    -  for comment in comments
+      = render :partial => 'mygengo/comments/comment', :locals => {:comment => comment}
+  %br 
+- else
+  No comments

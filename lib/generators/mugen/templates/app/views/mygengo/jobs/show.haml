@@ -1,0 +1,37 @@
+.mygengo-job
+  %h2 Job: #{@job['job_id']}(#{@job['slug']})
+
+%table.general  
+  = render :partial => 'mygengo/jobs/job', :locals => {:job => @job}
+
+.mygengo-form
+  .left
+    Body
+    %br
+    = text_area_tag :body_src, @job['body_src'], :size => '40x11'
+    %br
+  - if @job['status'] == 'pending' || !@job['status'] == 'approved'
+    %div
+      Body (translated)
+      %br
+      = text_area_tag :body_tgt, @job['body_tgt'], :size => '40x10'
+      %br
+      Warning: this is machine pre-translation
+.clear                           
+- unless @feedback.empty?
+  = render :partial => "mygengo/jobs/feedback", :locals => {:feedback => @feedback}
+
+%br
+
+- unless @job['status'] == 'available' || @job['status'] == 'approved'
+  .mygengo-box
+    = render :partial => "comments", :locals => {:comments => @comments} 
+    = render :partial => "mygengo/comments/form"
+
+
+- unless @revisions.empty?
+  .mygengo-box      
+    %h4 Revisions
+    %ul.mygengo-revisions
+      - for rev in @revisions
+        = render :partial => "mygengo/jobs/revision", :locals => {:revision => rev, :job => @job}      
