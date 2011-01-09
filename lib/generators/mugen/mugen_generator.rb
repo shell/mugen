@@ -9,38 +9,14 @@ class MugenGenerator < Rails::Generators::Base
       app/views/mygengo/comments
       app/views/mygengo/jobs
       public/stylesheets/mygengo
+      public/images/mygengo
     ).each {|dir|
       directory dir 
     }
     
     # Copy files 
     %W(
-      config/initializers/mugen.rb
-      app/controllers/mygengo/account_controller.rb
-      app/controllers/mygengo/comments_controller.rb
-      app/controllers/mygengo/jobs_controller.rb
-      app/helpers/mugen_helper.rb
-      app/views/layouts/mygengo.html.erb
-      app/views/mygengo/account/index.haml
-      app/views/mygengo/account/_balance.haml
-      app/views/mygengo/account/_stats.haml
-      app/views/mygengo/comments/_comment.haml
-      app/views/mygengo/comments/_form.haml
-      app/views/mygengo/jobs/_comments.haml
-      app/views/mygengo/jobs/_feedback.haml
-      app/views/mygengo/jobs/_revision.haml
-      app/views/mygengo/jobs/index.haml
-      app/views/mygengo/jobs/new.haml
-      app/views/mygengo/jobs/reject_form.haml
-      app/views/mygengo/jobs/review_form.haml
-      app/views/mygengo/jobs/revise_form.haml
-      app/views/mygengo/jobs/revision.haml
-      app/views/mygengo/jobs/show.haml      
-      public/stylesheets/mygengo/base.css      
-      public/stylesheets/mygengo/mugen.css      
-      public/stylesheets/mygengo/override.css      
-      public/stylesheets/mygengo/scaffold.css      
-      public/stylesheets/mygengo/style.css      
+      config/initializers/mugen.rb    
     ).each do |filename|
       copy_file filename, filename
     end 
