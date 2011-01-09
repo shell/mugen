@@ -17,6 +17,8 @@ class MugenGenerator < Rails::Generators::Base
     # Copy files 
     %W(
       config/initializers/mugen.rb    
+      app/helpers/mugen_helper.rb
+      app/views/layouts/mygengo.html.erb
     ).each do |filename|
       copy_file filename, filename
     end 
