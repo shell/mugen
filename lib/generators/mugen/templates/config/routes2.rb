@@ -12,4 +12,4 @@ map.namespace(:mygengo) do |admin|
   admin.resources :account, :only => [:index]
 end
 
-map.connect '/mygengo/jobs/:job_id/revision/:id', :controller => 'mygengo/jobs', :action => 'revision', :as => :revision_mygengo_job
+map.revision_mygengo_job '/mygengo/jobs/:job_id/revision/:id', :controller => 'mygengo/jobs', :action => 'revision'
