@@ -35,6 +35,7 @@ class MugenGenerator < Rails::Generator::Base
        m.file 'app/views/mygengo/comments/_form.haml', 'app/views/mygengo/comments/_form.haml'
        m.file 'app/views/mygengo/jobs/_comments.haml', 'app/views/mygengo/jobs/_comments.haml'
        m.file 'app/views/mygengo/jobs/_feedback.haml', 'app/views/mygengo/jobs/_feedback.haml'
+       m.file 'app/views/mygengo/jobs/_job.haml', 'app/views/mygengo/jobs/_job.haml'
        m.file 'app/views/mygengo/jobs/_revision.haml', 'app/views/mygengo/jobs/_revision.haml'
        m.file 'app/views/mygengo/jobs/index.haml', 'app/views/mygengo/jobs/index.haml'
        m.file 'app/views/mygengo/jobs/new.haml', 'app/views/mygengo/jobs/new.haml'
