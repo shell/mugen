@@ -40,6 +40,12 @@
   See routes.rb for url mappings.
   Default page is here (<http://localhost:3000/mygengo/account>)
 
+## Debugging
+
+  To debug http-requests, uncomment following line in lib/mugen/client.rb:
+  
+    debug_output $stderr
+
 ## TODO
 - remove csrf_tag in layout file for rails2
 - I18n
