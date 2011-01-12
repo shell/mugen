@@ -7,6 +7,7 @@ map.namespace(:mygengo) do |admin|
       :reject      => :post, 
       :revise      => :post,
       :approve     => :post,  
+      :callback    => :post,
   }  
   admin.resources :comments, :only => [:create]
   admin.resources :account, :only => [:index]

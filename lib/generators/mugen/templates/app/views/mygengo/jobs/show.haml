@@ -10,16 +10,17 @@
     %br
     = text_area_tag :body_src, @job['body_src'], :size => '40x11'
     %br
-  - if @job['status'] == 'pending' || !@job['status'] == 'approved'
+  - if @job['status'] == 'pending' || @job['status'] == 'approved'
     %div
       Body (translated)
       %br
       = text_area_tag :body_tgt, @job['body_tgt'], :size => '40x10'
-      %br
-      Warning: this is machine pre-translation
+      - if @job['status'] == 'pending'
+        %br
+        Warning: this is machine pre-translation
 .clear                           
-- unless @feedback.empty?
-  = render :partial => "mygengo/jobs/feedback", :locals => {:feedback => @feedback}
+- unless @feedback.blank?
+= render :partial => "mygengo/jobs/feedback", :locals => {:feedback => @feedback}
 
 %br
 

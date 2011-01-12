@@ -138,10 +138,30 @@ class Mygengo::JobsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+ 
+  # POST /jobs/1/callback
+  def callback
+    # The job was updated as per http://mygengo.com/services/api/dev-docs/callback-urls
+    # Handle locally
   
+    if params[:job].present?
+      job = ActiveSupport::JSON.decode(params[:job])
+      handle_job_update(job)
+    elsif params[:comment].present?
+      comment = ActiveSupport::JSON.decode(params[:comment])
+      handle_job_comment(comment)
+    end
+  end
+    
   private 
     def sanitize(text)
       return text.gsub(/<\/?.*?>/, "")
+    end
+    
+    def handle_job_update(job)
+    end
+    
+    def handle_job_comment(comment)
     end
     
     # FIXME
