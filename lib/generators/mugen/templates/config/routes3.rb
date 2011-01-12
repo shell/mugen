@@ -7,7 +7,8 @@ namespace :mygengo do
       get :purchase
       post :reject        
       post :revise
-      post :approve        
+      post :approve
+      post :callback
     end
   end
   resources :comments, :only => [:create]

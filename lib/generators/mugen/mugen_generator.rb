@@ -27,7 +27,7 @@ class MugenGenerator < Rails::Generators::Base
     sentinel = '::Application.routes.draw do'
     new_routes = IO.read(File.dirname(__FILE__) + '/templates/config/routes3.rb')
     
-    gsub_file 'config/routes.rb', /(#{Regexp.escape(sentinel)})/mi do |match|
+    gsub_file 'config/routes3.rb', /(#{Regexp.escape(sentinel)})/mi do |match|
       "#{match}\n #{new_routes}"
     end
     
