@@ -51,6 +51,7 @@
 - I18n
 - made js agnostic
 - cover everything with tests   
+- Something really bad happening with css
                
 
 ## Author
