@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name              = "mugen"
-  s.version           = "0.1.0"
+  s.version           = Mugen::VERSION
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Vladimir Penkin"]
   s.email             = ["penkinv@gmail.com"]
