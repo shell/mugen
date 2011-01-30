@@ -1,5 +1,5 @@
 # coding: UTF-8
-
+require 'mugen/version'
 Gem::Specification.new do |s|
   s.name              = "mugen"
   s.version           = Mugen::VERSION
