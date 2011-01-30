@@ -18,7 +18,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'haml'
   s.add_runtime_dependency 'ruby-hmac'
   
-  # s.add_development_dependency "another", "= 0.9"
+  s.add_development_dependency "ruby-debug"
+  s.add_development_dependency "rspec"
 
   # The list of files to be contained in the gem
   s.files         = `git ls-files`.split("\n")
