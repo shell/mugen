@@ -14,6 +14,8 @@ module Mugen
   autoload :Jobs, 'mugen/jobs'
   autoload :Job, 'mugen/job'
   
+  @@errors = []
+
   def api_url=(url)
     @api_url = url
   end
@@ -39,9 +41,9 @@ module Mugen
   end   
   
   def errors
-    @errors || []
+    @@errors || []
   end
-    
+
   def sign(private_key, data)
     if Hash === data
       sorted_keys = data.keys.sort
