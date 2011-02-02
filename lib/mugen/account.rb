@@ -7,7 +7,7 @@ module Mugen
     # Retrieves account stats, such as orders made.
     #
     def stats(options={})
-      res = self.get "/account/stats", :query => Mugen.set_params(options)
+      res = self.get "/account/stats", :query => options
       check_for_errors(res)
       res['response']
     end
@@ -17,7 +17,7 @@ module Mugen
     # Retrieves account balance in credits
     #
     def balance(options={})
-      res = self.get "/account/balance", :query => Mugen.set_params(options)
+      res = self.get "/account/balance", :query => options
       check_for_errors(res)
       res['response']      
     end                              

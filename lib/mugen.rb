@@ -3,6 +3,7 @@ require 'cgi'
 require 'hmac-sha1'
 require 'httparty'
 require 'mugen/core_extensions'
+require 'mugen/httparty_extensions'
 
 module Mugen  
   extend self
