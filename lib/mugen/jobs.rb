@@ -8,7 +8,7 @@ module Mugen
     # by the given parameters.
     #
     def all(options={})
-      res = self.get "/translate/jobs", :query => Mugen.set_params(options) 
+      res = self.get "/translate/jobs", :query => options 
       check_for_errors(res)
       res['response']
     end
@@ -21,7 +21,7 @@ module Mugen
     # together.
     #
     def by_group(id, options={})
-      res = self.get "/translate/jobs/#{id}", :query => Mugen.set_params(options) 
+      res = self.get "/translate/jobs/#{id}", :query => options 
       check_for_errors(res)
       res['response']
     end            
@@ -32,7 +32,7 @@ module Mugen
     # Submits a job or group of jobs to translate.
     #
     def create(options = {})
-      res = self.post "/translate/jobs", :body => Mugen.set_params(options) 
+      res = self.post "/translate/jobs", :body => options
       check_for_errors(res)
       res['response']
     end

@@ -15,7 +15,7 @@ module Mugen
     # Retrieves a specific job
     #
     def find(id, options={})
-      res = self.get "/translate/job/#{id}", :query => Mugen.set_params(options)       
+      res = self.get "/translate/job/#{id}", :query => options       
       check_for_errors(res)
       res['response']['job']
     end
@@ -30,7 +30,7 @@ module Mugen
         raise Exception, '"options" missing required parameters'
       end
       job = { 'job' => options }
-      res = self.post "/translate/job", :body => Mugen.set_params(job, :post)
+      res = self.post "/translate/job", :body => job
       check_for_errors(res)
       res['response']
     end     
@@ -46,7 +46,7 @@ module Mugen
       # end      
       options.merge! :action => action
       job = options
-      res = self.put "/translate/job/#{job_id}", :body => Mugen.set_params(job, :post)
+      res = self.put "/translate/job/#{job_id}", :body => job
       check_for_errors(res)
       res['response']
     end                        
@@ -75,7 +75,7 @@ module Mugen
     #
     def delete(id, options = {})   
       options.merge!('_method' => 'delete')
-      res = self.delete "/translate/job/#{id}", :query => Mugen.set_params(options)
+      res = self.delete "/translate/job/#{id}", :query => options
       check_for_errors(res)
       res['response']      
     end
@@ -88,7 +88,7 @@ module Mugen
     #
     def preview(id, options = {})           
       name = "#{Time.now.gmtime.to_i}.jpg"
-      res = self.get "/translate/job/#{id}/preview", :query => Mugen.set_params(options)
+      res = self.get "/translate/job/#{id}/preview", :query => options
       check_for_errors(res)
       tempfile = File.new("#{Rails.root.to_s}/public/images/mygengo/#{name}", "w+")
       tempfile << res
@@ -105,7 +105,7 @@ module Mugen
       if comment.nil? || comment.empty?
         raise Exception, '"options" missing required parameters'
       end
-      res = self.post "/translate/job/#{job_id}/comment", :body => Mugen.set_params(comment, :post)
+      res = self.post "/translate/job/#{job_id}/comment", :body => comment
       check_for_errors(res)
       res['response']
     end
@@ -116,7 +116,7 @@ module Mugen
     # Retrieves the comment thread for a job
     #    
     def comments(id, options = {})     
-      res = self.get "/translate/job/#{id}/comments", :query => Mugen.set_params(options)
+      res = self.get "/translate/job/#{id}/comments", :query => options
       check_for_errors(res)
       res['response']['thread']
     end     
@@ -127,7 +127,7 @@ module Mugen
     # Retrieves the feedback
     #    
     def feedback(id, options = {})     
-      res = self.get "/translate/job/#{id}/feedback", :query => Mugen.set_params(options)
+      res = self.get "/translate/job/#{id}/feedback", :query => options
       check_for_errors(res)
       res['response']['feedback']
     end     
@@ -138,7 +138,7 @@ module Mugen
     # Gets list of revision resources for a job.
     #    
     def revisions(id, options = {})     
-      res = self.get "/translate/job/#{id}/revisions", :query => Mugen.set_params(options)
+      res = self.get "/translate/job/#{id}/revisions", :query => options
       check_for_errors(res)
       res['response']['revisions']
     end     
@@ -149,7 +149,7 @@ module Mugen
     # Gets specific revision for a job.
     #    
     def revision(job_id, id, options = {})     
-      res = self.get "/translate/job/#{job_id}/revision/#{id}", :query => Mugen.set_params(options)
+      res = self.get "/translate/job/#{job_id}/revision/#{id}", :query => options
       check_for_errors(res)
       res['response']['revision']
     end     

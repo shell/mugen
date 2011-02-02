@@ -9,7 +9,7 @@ module Mugen
     # prices.
     #
     def language_pairs(options={})
-      res = self.get "/translate/service/language_pairs", :query => Mugen.set_params(options)
+      res = self.get "/translate/service/language_pairs", :query => options
       check_for_errors(res)
       res['response']
     end
@@ -20,7 +20,7 @@ module Mugen
     # Returns a list of supported languages and their language codes.
     #
     def languages(options={})
-      res = self.get "/translate/service/languages", :query => Mugen.set_params(options)
+      res = self.get "/translate/service/languages", :query => options
       check_for_errors(res)
       res['response']
     end

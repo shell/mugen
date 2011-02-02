@@ -1,4 +1,5 @@
 # coding: UTF-8
+$LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 require 'mugen/version'
 Gem::Specification.new do |s|
   s.name              = "mugen"
@@ -18,7 +19,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'haml'
   s.add_runtime_dependency 'ruby-hmac'
   
-  s.add_development_dependency "ruby-debug"
   s.add_development_dependency "rspec"
 
   # The list of files to be contained in the gem
