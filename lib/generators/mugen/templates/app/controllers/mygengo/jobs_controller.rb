@@ -1,4 +1,5 @@
 class Mygengo::JobsController < Mygengo::MygengoController
+  URL_REGEXP = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix
   
   # GET /jobs
   # GET /jobs.xml
@@ -105,6 +106,10 @@ class Mygengo::JobsController < Mygengo::MygengoController
   # POST /jobs.xml
   def create      
     params[:job]['body_src'] = sanitize(params[:job]['body_src'])
+    if params[:job]['callback_url'].empty? || 
+       !params[:job]['callback_url'].match(URL_REGEXP)
+      params[:job].delete('callback_url') 
+    end
     mygengo_requests do
       flag = Mugen::Job.create(params[:job])    
     end
