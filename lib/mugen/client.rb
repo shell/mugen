@@ -16,7 +16,7 @@ module Mugen
     end
     
     def self.check_for_errors(res)
-      unless res['opstat'] == 'ok'
+      if res['opstat'] != 'ok' && res['err']
         Mugen.errors << res['err']['msg']
       end
     end
