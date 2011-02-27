@@ -90,10 +90,14 @@ module Mugen
       name = "#{Time.now.gmtime.to_i}.jpg"
       res = self.get "/translate/job/#{id}/preview", :query => options
       check_for_errors(res)
-      tempfile = File.new("#{Rails.root.to_s}/public/images/mygengo/#{name}", "w+")
-      tempfile << res
-      tempfile.close 
-      "mygengo/#{name}"      
+      if File.exists?(Rails.root.join('public','images', 'mygengo', name))
+        tempfile = File.new("#{Rails.root.to_s}/public/images/mygengo/#{name}", "w+")
+        tempfile << res
+        tempfile.close 
+        "mygengo/#{name}"      
+      else
+        nil
+      end
     end     
     
     #
