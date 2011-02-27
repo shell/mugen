@@ -61,7 +61,7 @@ module Mugen
     if method == :get 
       params.merge! 'api_sig' => sign(Mugen.private_key, params)
     else
-      params.merge! 'api_sig' => sign(Mugen.private_key, params.to_json)
+      params.merge! 'api_sig' => sign(Mugen.private_key, params.to_json.gsub('/', '\/'))
     end
       
     params
