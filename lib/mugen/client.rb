@@ -15,6 +15,11 @@ module Mugen
       [path, options]
     end
     
+    def self.before_put(path, options)
+      options[:body] = Mugen.set_params(options[:body], :post) if options.has_key? :body
+      [path, options]
+    end
+    
     def self.check_for_errors(res)
       if res['opstat'] != 'ok' && res['err']
         Mugen.errors << res['err']['msg']
