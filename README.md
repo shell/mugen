@@ -12,6 +12,9 @@
   
   Generate scaffold:
     $ rails generate mugen
+
+  Install rails3_before_render plugin
+    $ rails plugin install git://github.com/shell/rails3_before_render.git
     
   Configure API keys in config/initializers/mugen.rb:
     Mugen.api_key = ''
@@ -32,6 +35,9 @@
   Next generate scaffold
     
     $ script/generate mugen
+
+  Install rails3_before_render plugin
+    $ rails plugin install git://github.com/shell/rails3_before_render.git
     
   Configure API keys in config/initializers/mugen.rb
   Start server and enjoy

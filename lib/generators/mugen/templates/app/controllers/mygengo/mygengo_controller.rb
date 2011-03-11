@@ -1,4 +1,5 @@
 class Mygengo::MygengoController < ApplicationController
+  before_render :parse_errrors
   layout 'mygengo'        
 
   protected
@@ -13,10 +14,5 @@ class Mygengo::MygengoController < ApplicationController
       Mugen.errors.clear
     end
   end
-  
-  def mygengo_requests
-    yield
-    parse_errrors
-  end
-        
+          
 end  
