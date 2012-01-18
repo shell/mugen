@@ -2,7 +2,11 @@ module Mugen
   class Client
     include HTTParty
     base_uri Mugen.api_url || 'http://api.sandbox.mygengo.com/v1/'
-    headers 'Accept' => 'application/json'    
+    headers = {
+      'Accept' => 'application/json',
+      'User-Agent' => 'myGengo Mugen Rails API Wrapper; Version 0.0.1; http://github.com/shell/mugen'
+    }
+
     # debug_output $stderr                                
 
     def self.before_get(path, options)
