@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/shell/mugen.png)](https://secure.travis-ci.org/shell/mugen.png)
 ## Introduction
   Mugen is API wrapper for MyGengo(<http://mygengo.com/>) and scaffold generator for existing rails app
    
