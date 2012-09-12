@@ -4,18 +4,17 @@ describe Mugen::Job do
   before(:each) do 
     Mugen.api_key = '6NO~NtyavKh@x-Uz@)0LG_PQ1KJI[(kd_2{oqv}H{ubO5Yu3is~IF^udRwM6QC6n'
     Mugen.private_key = 'w0F((zYj3=09(AD|2B7)jNT@5F[wajwk[6u^stF59wCfuCtwMEMB^c7y=5V~WM^K'
-    @job = Mugen::Job.new
+    @job = Mugen::Job
+    @jobs = Mugen::Jobs.all
   end                             
   
   it "should retrieve job" do
-    @jobs = Mugen::Jobs.new.all
     job = @job.find(@jobs.first['job_id'])
     job.should be_a(Hash)
     job['job_id'].should == @jobs.first['job_id']
    end
    
   it "should retrieve job" do
-    @jobs = Mugen::Jobs.new.all
     job = @job.preview(@jobs.first['job_id'])
     # TODO: raw jpeg stream
  end
